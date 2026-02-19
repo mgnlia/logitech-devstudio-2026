@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DialMind — Logitech DevStudio 2026</title>
+  <meta name="description" content="DialMind: adaptive AI context interface for MX Creative Console." />
+  <style>
+    :root { --bg:#0b1020; --card:#131a2b; --text:#e8ecf7; --muted:#a8b3cf; --accent:#5eead4; --accent2:#60a5fa; --border:#27324f; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background: radial-gradient(1200px 600px at 20% -10%, #1e2a4b 0%, transparent 60%), var(--bg); color:var(--text); line-height:1.5; }
+    .wrap { max-width:980px; margin:0 auto; padding:36px 20px 80px; }
+    .hero { border:1px solid var(--border); border-radius:18px; padding:28px; background:linear-gradient(140deg, rgba(94,234,212,.08), rgba(96,165,250,.08)); }
+    h1{ margin:0 0 10px; font-size:2rem; } h2{ margin:28px 0 10px; font-size:1.2rem; } p{ margin:0 0 10px; color:var(--muted); }
+    .tag{ display:inline-block; font-size:.78rem; color:#0b1020; background:var(--accent); padding:4px 10px; border-radius:999px; font-weight:700; }
+    .grid{ display:grid; gap:14px; margin-top:16px; } @media(min-width:780px){ .grid.cols-3{grid-template-columns:repeat(3,1fr)} .grid.cols-2{grid-template-columns:repeat(2,1fr)} }
+    .card{ border:1px solid var(--border); border-radius:14px; background:var(--card); padding:14px; }
+    .k{ color:var(--text); font-weight:600; margin-bottom:6px; } .v{ color:var(--muted); font-size:.95rem; }
+    .cta{ margin-top:18px; display:inline-block; color:#051427; background:linear-gradient(90deg,var(--accent),var(--accent2)); text-decoration:none; padding:10px 14px; border-radius:10px; font-weight:700; }
+    footer{ margin-top:34px; color:#8b97b6; font-size:.85rem; } code{ color:#c7d2fe; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <span class="tag">Logitech DevStudio 2026 • Track 1 (Actions SDK)</span>
+      <h1>DialMind</h1>
+      <p><strong style="color:#fff">Adaptive AI Context Interface for MX Creative Console</strong></p>
+      <p>DialMind maps physical dials/buttons/LED feedback to live IDE context so developers can interact with AI suggestions and debug flows without breaking keyboard focus.</p>
+      <a class="cta" href="https://devstudiologitech2026.devpost.com/" target="_blank" rel="noreferrer">View Challenge</a>
+    </section>
+
+    <h2>Core Interaction Model</h2>
+    <div class="grid cols-3">
+      <article class="card"><div class="k">Left dial</div><div class="v">Cycle active suggestions</div></article>
+      <article class="card"><div class="k">Right dial</div><div class="v">Suggestion preference (conservative → exploratory)</div></article>
+      <article class="card"><div class="k">Center button</div><div class="v">Accept top suggestion; long-press dismiss/snooze</div></article>
+      <article class="card"><div class="k">Top-left button</div><div class="v">Jump to next error</div></article>
+      <article class="card"><div class="k">Top-right button</div><div class="v">Toggle AI-assist session mode</div></article>
+      <article class="card"><div class="k">LED ring</div><div class="v">State awareness: ready, paused, debug urgency</div></article>
+    </div>
+
+    <h2>Adaptive Novelty</h2>
+    <div class="grid cols-2">
+      <article class="card"><div class="k">Writing Mode</div><div class="v">Baseline productivity mappings</div></article>
+      <article class="card"><div class="k">Review Mode</div><div class="v">Suggestion controls prioritized</div></article>
+      <article class="card"><div class="k">Debug Mode</div><div class="v">Diagnostics navigation and fix flow prioritized</div></article>
+      <article class="card"><div class="k">Why new?</div><div class="v">Context-aware remapping for AI coding workflows, not static shortcuts</div></article>
+    </div>
+
+    <h2>Deadline Proof</h2>
+    <div class="grid cols-2">
+      <article class="card"><div class="k">Devpost Calendar (ICS)</div><div class="v"><code>DTSTART;TZID=Europe/Zurich:20260225T170000</code></div></article>
+      <article class="card"><div class="k">Equivalent Times</div><div class="v">16:00 UTC • 11:00 ET • 08:00 PT</div></article>
+    </div>
+
+    <footer>Phase-1 submission landing page draft for DialMind.</footer>
+  </main>
+</body>
+</html>
