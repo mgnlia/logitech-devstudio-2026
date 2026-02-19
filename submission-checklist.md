@@ -79,12 +79,12 @@ DialMind — Adaptive AI Context Interface for MX Creative Console
 Short version for any character-limited fields:
 ```
 DialMind turns the MX Creative Console into a live, adaptive AI coding interface.
-Using the Actions SDK, it reads real-time context from Cursor IDE / VS Code Copilot
-and maps AI suggestion cycling, temperature control, and error navigation to the
-Console's dials and buttons — with LED ring feedback. The hardware reconfigures
-itself across writing, review, and debug modes. First physical-digital feedback
-loop for AI-assisted coding. Target: 40M+ developers reachable via Logitech Marketplace.
-Free + $5/mo Pro + Enterprise tiers.
+Using the Actions SDK, it reads real-time context from VS Code-compatible editor signals
+(diagnostics, cursor position, and suggestion-state polling) and maps AI suggestion
+cycling, creativity preference, and error navigation to the Console's dials and buttons
+with LED ring feedback. The hardware reconfigures itself across writing, review, and
+debug modes. First physical-digital feedback loop for AI-assisted coding. Target: 40M+
+developers reachable via Logitech Marketplace. Free + $5/mo Pro + Enterprise tiers.
 ```
 
 ### Video Link
@@ -120,5 +120,5 @@ Free + $5/mo Pro + Enterprise tiers.
 
 ---
 
-*Submission Checklist v1 | Logitech DevStudio 2026 | Feb 19, 2026*
-*Task: 6Bl6wa6EFCM3jQK2TlSGD*
+*Submission Checklist v2 | Logitech DevStudio 2026 | Feb 19, 2026*
+*Task: 6Bl6wa6EFCM3jQK2TlSGD | Updated: adversary-gate technical claim fixes applied*
