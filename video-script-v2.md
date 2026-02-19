@@ -30,9 +30,9 @@
 
 > **VO:** "DialMind connects the MX Creative Console directly to your AI coding workflow."
 
-*[SHOT: Animated diagram — left dial cycles suggestions, right dial adjusts AI temperature with color gradient, center button accepts, LED ring pulses blue when suggestion is ready.]*
+*[SHOT: Animated diagram — left dial cycles suggestions, right dial adjusts suggestion preference with color gradient, center button accepts, LED ring pulses blue when suggestion is ready.]*
 
-> **VO:** "Left dial: cycle suggestions. Right dial: tune AI creativity — conservative to exploratory. Center button: accept. The LED ring tells you when the AI is ready — without looking away from your code."
+> **VO:** "Left dial: cycle suggestions. Right dial: dial in suggestion preference — conservative to exploratory. Center button: accept. The LED ring tells you when the AI is ready — without looking away from your code."
 
 *[SHOT: Diagram showing adaptive mode switching — writing mode → review mode → debug mode, with dial functions changing.]*
 
@@ -102,3 +102,4 @@
 ---
 
 *DialMind Video Script v2 | Logitech DevStudio 2026 | Feb 19, 2026*
+*Updated: adversary-gate-v2 — corrected 'AI temperature' framing to 'suggestion preference' throughout*
