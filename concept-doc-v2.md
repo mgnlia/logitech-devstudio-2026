@@ -13,7 +13,7 @@ The MX Creative Console sits on every power user's desk with three dials, multip
 
 ## THE CONCEPT: DIALMIND
 
-**DialMind** is an Actions SDK plugin that turns the MX Creative Console into a live, adaptive AI coding interface. It reads real-time context from the active IDE — current file, suggestion state, error count, cursor position — and surfaces the most useful controls physically, without the developer ever leaving their keyboard flow.
+**DialMind** is an Actions SDK plugin that turns the MX Creative Console into a live, adaptive AI coding interface. It reads IDE-visible context signals — active file, diagnostics, cursor location, and suggestion-state heuristics — and surfaces the most useful controls physically, without the developer leaving keyboard flow.
 
 ### Core Interaction Model
 
@@ -27,7 +27,7 @@ The MX Creative Console sits on every power user's desk with three dials, multip
 | **LED ring** | Suggestion-ready pulse (blue) | Shifts to red when error count > threshold |
 
 ### What Makes It Adaptive
-DialMind doesn't just map static shortcuts. It watches IDE state and *changes what the dials do* based on context:
+DialMind doesn't just map static shortcuts. It watches editor state and *changes what the dials do* based on context:
 - **Writing mode** (no suggestions pending): dials control font size, split-pane layout, zoom
 - **Review mode** (suggestion active): dials switch to suggestion cycling + creativity preference
 - **Debug mode** (errors present): dials navigate error list, buttons trigger quick-fix
@@ -36,9 +36,17 @@ This is the key novelty: **the hardware surface reconfigures itself to match the
 
 ---
 
+## API REALITY CHECK (TECHNICAL ACCURACY)
+
+- **No dial resistance/haptic control claim:** Actions SDK currently provides dial/button input events and LED output control; DialMind does **not** claim physical resistance or force-feedback control.
+- **No raw model temperature API claim:** “Creativity preference” is a plugin-level UX setting (conservative ↔ exploratory), not direct access to model temperature.
+- **Cursor scope is explicit:** Cursor integration is limited to VS Code-compatible extension surfaces + polling/inference from editor-visible suggestion state. DialMind does **not** claim private Cursor suggestion-stream access.
+
+---
+
 ## NOVELTY
 
-No existing Actions SDK plugin or third-party tool bridges physical peripheral controls to AI coding assistant state. The MX Creative Console has been deployed for creative apps (Premiere Pro, Blender, DaVinci Resolve) — but never as a real-time AI interface. DialMind introduces a new interaction paradigm: **embodied AI coding**, where the developer's hands stay in physical contact with the AI workflow rather than reaching for mouse + menus.
+No existing Actions SDK plugin or third-party tool bridges physical peripheral controls to AI coding assistant state. The MX Creative Console has been deployed for creative apps (Premiere Pro, Blender, DaVinci Resolve) — but not as a context-adaptive AI coding interface. DialMind introduces a new interaction paradigm: **embodied AI coding**, where the developer's hands stay in physical contact with the AI workflow rather than reaching for mouse + menus.
 
 The adaptive context-switching model (writing → review → debug mode) is not present in any existing plugin on the Logitech Marketplace.
 
@@ -61,7 +69,7 @@ Every developer in this pool currently navigates AI suggestions with keyboard-on
 
 | Tier | Price | What's included |
 |------|-------|----------------|
-| **Free** | $0 | Core mappings for Cursor + VS Code Copilot, single profile |
+| **Free** | $0 | Core mappings for VS Code + VS Code-compatible editors, single profile |
 | **Pro** | $5/month | Custom mappings, multi-project profiles, team sync, priority updates |
 | **Enterprise** | Custom | IT-managed deployment, SSO, usage analytics for dev teams |
 
@@ -75,15 +83,16 @@ Every developer in this pool currently navigates AI suggestions with keyboard-on
 
 **Stack:**
 - Logitech Actions SDK (C#) — dial/button event handling, LED ring control, profile management
-- VS Code Extension API — error diagnostics (LSP), cursor position, suggestion state via polling
-- Local IPC daemon (no cloud, no telemetry) — privacy-safe, fully offline-capable
+- VS Code Extension API — diagnostics (LSP), cursor state, command hooks
+- Suggestion-state detector — polling/inference over editor-visible state (no private assistant APIs)
+- Local IPC daemon (no cloud, no telemetry) — privacy-safe, offline-capable
 - Configurable creativity preference setting — plugin-side control over suggestion aggressiveness, stored per-project profile
 - Target: Windows 10/11 + macOS 13+
 
 **Phase 1 scope (this submission):** Concept pitch + architecture specification. No prototype required.
-**Phase 2 scope (April 1, if Top 50):** Working plugin — dial cycling, creativity preference control, LED feedback, VS Code + Cursor support. ~3 weeks of implementation from a single developer.
+**Phase 2 scope (April 1, if Top 50):** Working plugin — dial cycling, creativity preference control, LED feedback, VS Code-first implementation with Cursor compatibility where APIs overlap. ~3 weeks of implementation from a single developer.
 
-**Risk:** Actions SDK is C# primary; Node.js wrapper is alpha. Team is C# capable. No hardware dependency for Phase 1.
+**Risk:** Actions SDK is C# primary; Node.js wrapper is alpha. Cursor API surface is not fully public for suggestion internals, so implementation scope remains on public/observable IDE signals.
 
 ---
 
@@ -91,12 +100,12 @@ Every developer in this pool currently navigates AI suggestions with keyboard-on
 
 | Criterion | Score | Rationale |
 |-----------|-------|-----------|
-| **NOVELTY** | ★★★★★ | First physical-digital AI coding interface. Adaptive context model is genuinely new. |
-| **IMPACT** | ★★★★★ | 40M+ reachable users. Solves daily friction. Clear Logitech marketing narrative. |
+| **NOVELTY** | ★★★★★ | First context-adaptive physical interface for AI coding workflows on MX Creative Console. |
+| **IMPACT** | ★★★★★ | 40M+ reachable users. Solves high-frequency workflow friction. |
 | **VIABILITY** | ★★★★☆ | Proven freemium model. Marketplace distribution. Expansion to creative apps. |
-| **IMPLEMENTATION QUALITY** | ★★★★☆ | Clean 1-control-1-function UX. LED ambient feedback. Offline-first. Phase 2 is 3 weeks of work. |
+| **IMPLEMENTATION QUALITY** | ★★★★☆ | Public-API-constrained architecture with explicit, feasible Phase 2 scope. |
 
 ---
 
 *DialMind | Logitech DevStudio 2026 | Track 1: Actions SDK*
-*Prepared: Feb 19, 2026 | Updated: adversary-gate-v2 fixes applied | Task: 6Bl6wa6EFCM3jQK2TlSGD*
+*Prepared: Feb 19, 2026 | Updated: adversary-gate-v3 technical-accuracy fixes | Task: 6Bl6wa6EFCM3jQK2TlSGD*
