@@ -13,14 +13,14 @@ The MX Creative Console sits on every power user's desk with three dials, multip
 
 ## THE CONCEPT: DIALMIND
 
-**DialMind** is an Actions SDK plugin that turns the MX Creative Console into a live, adaptive AI coding interface. It reads real-time context from the active IDE — current file, AI suggestion state, error count, cursor position — and surfaces the most useful controls physically, without the developer ever leaving their keyboard flow.
+**DialMind** is an Actions SDK plugin that turns the MX Creative Console into a live, adaptive AI coding interface. It reads real-time context from the active IDE — current file, suggestion state, error count, cursor position — and surfaces the most useful controls physically, without the developer ever leaving their keyboard flow.
 
 ### Core Interaction Model
 
 | Control | Default Mapping | Adaptive Behavior |
 |---------|----------------|-------------------|
 | **Left dial** | Cycle through active AI suggestions | Auto-activates when ≥1 suggestion is pending |
-| **Right dial** | AI temperature / creativity (0.0 → 1.0) | Remembers per-project preference |
+| **Right dial** | Suggestion creativity preference (conservative → exploratory) | Remembers per-project preference |
 | **Center button** | Accept top suggestion (single tap) | Long-press = reject all + suppress for 30s |
 | **Top-left button** | Jump to next file with active error | Pulses LED when errors exist |
 | **Top-right button** | Toggle AI on/off for current session | LED ring = green (on) / amber (off) |
@@ -29,10 +29,10 @@ The MX Creative Console sits on every power user's desk with three dials, multip
 ### What Makes It Adaptive
 DialMind doesn't just map static shortcuts. It watches IDE state and *changes what the dials do* based on context:
 - **Writing mode** (no suggestions pending): dials control font size, split-pane layout, zoom
-- **Review mode** (suggestion active): dials switch to suggestion cycling + temperature
+- **Review mode** (suggestion active): dials switch to suggestion cycling + creativity preference
 - **Debug mode** (errors present): dials navigate error list, buttons trigger quick-fix
 
-This is the key novelty: **the hardware surface reconfigures itself to match the developer's current cognitive mode**, surfaced through LED color and dial resistance feedback.
+This is the key novelty: **the hardware surface reconfigures itself to match the developer's current cognitive mode**, surfaced through LED color feedback.
 
 ---
 
@@ -75,13 +75,13 @@ Every developer in this pool currently navigates AI suggestions with keyboard-on
 
 **Stack:**
 - Logitech Actions SDK (C#) — dial/button event handling, LED ring control, profile management
-- VS Code Extension API — AI suggestion state, error diagnostics, cursor position
-- Cursor IDE Extension API — Copilot suggestion stream, temperature parameter access
+- VS Code Extension API — error diagnostics (LSP), cursor position, suggestion state via polling
 - Local IPC daemon (no cloud, no telemetry) — privacy-safe, fully offline-capable
+- Configurable creativity preference setting — plugin-side control over suggestion aggressiveness, stored per-project profile
 - Target: Windows 10/11 + macOS 13+
 
 **Phase 1 scope (this submission):** Concept pitch + architecture specification. No prototype required.
-**Phase 2 scope (April 1, if Top 50):** Working plugin — dial cycling, temperature control, LED feedback, VS Code + Cursor support. ~3 weeks of implementation from a single developer.
+**Phase 2 scope (April 1, if Top 50):** Working plugin — dial cycling, creativity preference control, LED feedback, VS Code + Cursor support. ~3 weeks of implementation from a single developer.
 
 **Risk:** Actions SDK is C# primary; Node.js wrapper is alpha. Team is C# capable. No hardware dependency for Phase 1.
 
@@ -99,4 +99,4 @@ Every developer in this pool currently navigates AI suggestions with keyboard-on
 ---
 
 *DialMind | Logitech DevStudio 2026 | Track 1: Actions SDK*
-*Prepared: Feb 19, 2026 | Task: 6Bl6wa6EFCM3jQK2TlSGD*
+*Prepared: Feb 19, 2026 | Updated: adversary-gate-v2 fixes applied | Task: 6Bl6wa6EFCM3jQK2TlSGD*
