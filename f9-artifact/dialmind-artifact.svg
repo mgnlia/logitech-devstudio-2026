@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020"/>
+      <stop offset="100%" stop-color="#16244d"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4fd1ff"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#bg)"/>
+  <text x="70" y="90" fill="#eaf0ff" font-family="Inter,Arial" font-size="48" font-weight="700">DialMind — Adaptive AI Context Interface</text>
+  <text x="70" y="130" fill="#9fb2e3" font-family="Inter,Arial" font-size="24">New F9 concrete artifact • Cycle 2026-02-20</text>
+
+  <rect x="70" y="190" rx="18" ry="18" width="300" height="170" fill="#111a38" stroke="#2b3a6b"/>
+  <text x="95" y="240" fill="#eaf0ff" font-size="28" font-family="Inter,Arial">IDE Context</text>
+  <text x="95" y="280" fill="#9fb2e3" font-size="20" font-family="Inter,Arial">Diagnostics</text>
+  <text x="95" y="308" fill="#9fb2e3" font-size="20" font-family="Inter,Arial">Cursor + Suggestion State</text>
+
+  <rect x="450" y="190" rx="18" ry="18" width="300" height="170" fill="#111a38" stroke="#2b3a6b"/>
+  <text x="490" y="242" fill="#eaf0ff" font-size="28" font-family="Inter,Arial">Mode Engine</text>
+  <text x="490" y="280" fill="#9fb2e3" font-size="20" font-family="Inter,Arial">Write • Review • Debug</text>
+
+  <rect x="830" y="190" rx="18" ry="18" width="300" height="170" fill="#111a38" stroke="#2b3a6b"/>
+  <text x="858" y="242" fill="#eaf0ff" font-size="28" font-family="Inter,Arial">MX Console Mapping</text>
+  <text x="858" y="280" fill="#9fb2e3" font-size="20" font-family="Inter,Arial">Dials • Buttons • LED Ring</text>
+
+  <path d="M370 275 L450 275" stroke="url(#acc)" stroke-width="8"/>
+  <path d="M750 275 L830 275" stroke="url(#acc)" stroke-width="8"/>
+
+  <rect x="70" y="420" rx="18" ry="18" width="1060" height="200" fill="#0f1630" stroke="#2b3a6b"/>
+  <text x="100" y="470" fill="#eaf0ff" font-size="30" font-family="Inter,Arial">Outcome</text>
+  <text x="100" y="515" fill="#9fb2e3" font-size="24" font-family="Inter,Arial">Physical, context-aware control loop for AI-assisted coding with lower interaction friction.</text>
+  <text x="100" y="560" fill="#9fb2e3" font-size="22" font-family="Inter,Arial">Artifact ID: F9-NEW-2026-02-20</text>
+</svg>
